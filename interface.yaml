@@ -1,4 +1,4 @@
-name: slurm-cluster-v2
+name: slurm-cluster
 summary: v2 interface for slurm controller
 maintainer:
   - OmniVector <omnivector@omnivector.solutions>
