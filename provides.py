@@ -27,7 +27,7 @@ class SlurmProvides(reactive.Endpoint):
     def get_node_data(self):
         """Return a list of dictionaries with info for each node"""
         return self._get_all_nodes(keys=set(['ingress-address', 'hostname',
-                                             'partition', 'default']))
+                                             'partition', 'inventory', 'default']))
 
     def _get_all_nodes(self, keys):
         """Return a list of dictionaries of values presented by remote units.

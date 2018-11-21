@@ -21,7 +21,7 @@ class SlurmRequires(reactive.Endpoint):
     def ingress_address(self):
         return self._controller_relation().to_publish['ingress-address']
 
-    def send_node_info(self, hostname, partition, default):
+    def send_node_info(self, hostname, partition, inventory, default):
         # can only handle a single controller relation both active and
         # standby receive the same node info for this relation
         rel = self._controller_relation()
@@ -30,6 +30,7 @@ class SlurmRequires(reactive.Endpoint):
             'hostname': hostname,
             'partition': partition,
             'default': default,
+            'inventory': inventory
         })
 
     def _controller_config_ready(self, config):
